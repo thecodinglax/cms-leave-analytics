@@ -1,0 +1,815 @@
+:root {
+    --navy: #123f73;
+    --navy2: #0c315b;
+    --blue: #1f568f;
+    --ink: #142033;
+    --muted: #718096;
+    --line: #e7edf4;
+    --bg: #f4f7fb;
+    --white: #ffffff;
+    --shadow: 0 12px 35px rgba(15, 43, 73, 0.08);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.shell {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.topbar {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ffffff;
+}
+
+.brand img {
+    width: 72px;
+    height: 72px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.brand-small {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.75;
+}
+
+.brand h1 {
+    margin: 3px 0;
+    font-size: 27px;
+}
+
+.brand p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.78;
+}
+
+.top-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.upload-btn,
+.outline,
+.primary,
+.ghost {
+    border: 0;
+    border-radius: 10px;
+
+    padding: 11px 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.upload-btn:hover,
+.outline:hover,
+.primary:hover,
+.ghost:hover {
+    transform: translateY(-1px);
+}
+
+.upload-btn {
+    background: #ffffff;
+    color: var(--navy);
+}
+
+.upload-btn input {
+    display: none;
+}
+
+.outline {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.primary {
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.ghost {
+    background: #eef3f8;
+    color: var(--navy);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    margin: 20px 0;
+
+    background: linear-gradient(
+        120deg,
+        #eaf2fb,
+        #ffffff
+    );
+
+    border: 1px solid #dfe9f4;
+    border-radius: 20px;
+
+    padding: 26px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.hero h2 {
+    margin: 8px 0;
+
+    font-size: 30px;
+
+    max-width: 800px;
+}
+
+.hero p {
+    color: var(--muted);
+
+    max-width: 850px;
+
+    line-height: 1.6;
+
+    margin-bottom: 0;
+}
+
+.hero-stat {
+    min-width: 190px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+.hero-stat span,
+.hero-stat small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.hero-stat strong {
+    display: block;
+
+    font-size: 30px;
+
+    color: var(--navy);
+
+    margin: 5px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters,
+.panel,
+.card {
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    box-shadow: var(--shadow);
+
+    border-radius: 16px;
+}
+
+.filters {
+    padding: 18px;
+
+    margin-bottom: 18px;
+}
+
+.filter-title {
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.filter-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+select,
+input {
+    width: 100%;
+
+    border: 1px solid #dce5ef;
+
+    background: #fbfdff;
+
+    border-radius: 9px;
+
+    padding: 11px;
+
+    color: var(--ink);
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+select:focus,
+input:focus {
+    border-color: var(--blue);
+
+    box-shadow: 0 0 0 3px rgba(31, 86, 143, 0.08);
+}
+
+.threshold-wrap {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border: 1px solid #dce5ef;
+
+    border-radius: 9px;
+
+    padding-left: 10px;
+
+    background: #fbfdff;
+}
+
+.threshold-wrap input {
+    border: 0;
+
+    background: transparent;
+}
+
+.threshold-wrap label,
+.threshold-wrap span {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    white-space: nowrap;
+}
+
+/* =========================
+   KPI CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin: 18px 0;
+}
+
+.card {
+    padding: 19px;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 15px 40px rgba(15, 43, 73, 0.11);
+}
+
+.card span,
+.card small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.card strong {
+    display: block;
+
+    font-size: 30px;
+
+    margin: 7px 0;
+
+    color: var(--navy);
+}
+
+/* =========================
+   MODE TABS
+========================= */
+
+.mode-tabs {
+    display: flex;
+
+    gap: 8px;
+
+    margin: 8px 0 14px;
+}
+
+.tab {
+    border: 1px solid #d8e2ec;
+
+    background: #ffffff;
+
+    padding: 11px 16px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    color: #536273;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+.tab:hover {
+    background: #f3f7fb;
+}
+
+.tab.active {
+    background: var(--navy);
+
+    color: #ffffff;
+
+    border-color: var(--navy);
+}
+
+/* =========================
+   CONTENT GRID
+========================= */
+
+.content-grid {
+    display: grid;
+
+    grid-template-columns: 1.35fr 0.65fr;
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+.panel {
+    padding: 18px;
+
+    min-width: 0;
+}
+
+/*
+    IMPORTANT:
+    Wide panels occupy the complete row.
+*/
+
+.wide {
+    grid-column: 1 / -1;
+
+    width: 100%;
+}
+
+/* =========================
+   PANEL HEADERS
+========================= */
+
+.panel-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+}
+
+.panel h3 {
+    margin: 0 0 4px;
+
+    font-size: 17px;
+}
+
+.panel p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.badge {
+    background: #edf4fb;
+
+    color: var(--navy);
+
+    padding: 7px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: auto;
+
+    max-height: 480px;
+}
+
+.table-wrap table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+}
+
+.table-wrap th {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+    background: #f6f9fc;
+
+    text-align: left;
+
+    color: #66778a;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.table-wrap th,
+.table-wrap td {
+    padding: 12px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    white-space: nowrap;
+}
+
+.table-wrap tbody tr:hover {
+    background: #f8fbfe;
+}
+
+.days {
+    font-weight: 800;
+
+    color: var(--navy);
+}
+
+.empty {
+    text-align: center !important;
+
+    color: var(--muted);
+
+    padding: 40px !important;
+}
+
+/* =====================================================
+   CHART FIX
+   ===================================================== */
+
+/*
+    Every chart gets a controlled height.
+    This prevents Chart.js from stretching
+    the page vertically.
+*/
+
+.panel canvas {
+    display: block;
+
+    width: 100% !important;
+
+    height: 280px !important;
+
+    max-height: 280px !important;
+}
+
+/*
+    Normal chart panels
+*/
+
+.chart-panel {
+    position: relative;
+
+    height: 350px;
+
+    min-height: 350px;
+
+    max-height: 350px;
+
+    overflow: hidden;
+}
+
+.chart-panel canvas {
+    width: 100% !important;
+
+    height: 270px !important;
+
+    max-height: 270px !important;
+}
+
+/*
+    Employee chart is a wide panel.
+    Give it its own controlled height.
+*/
+
+.wide:has(#employeeChart) {
+    height: 350px;
+
+    min-height: 350px;
+
+    max-height: 350px;
+
+    overflow: hidden;
+}
+
+.wide:has(#employeeChart) canvas {
+    width: 100% !important;
+
+    height: 280px !important;
+
+    max-height: 280px !important;
+}
+
+/*
+    Fallback for browsers that don't support :has().
+*/
+
+#employeeChart {
+    display: block;
+
+    width: 100% !important;
+
+    height: 280px !important;
+
+    max-height: 280px !important;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #8491a0;
+
+    font-size: 11px;
+
+    padding: 18px 4px;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    padding: 13px 17px;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: 0.25s;
+
+    pointer-events: none;
+
+    font-weight: 700;
+
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform: none;
+}
+
+.toast.good {
+    background: #1f6f4a;
+}
+
+.toast.bad {
+    background: #9f2e2e;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+    .shell {
+        padding: 18px;
+    }
+
+    .filter-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        display: block;
+    }
+
+    .hero-stat {
+        margin-top: 15px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .top-actions {
+        width: 100%;
+    }
+
+    .chart-panel {
+        height: 350px;
+
+        min-height: 350px;
+
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .shell {
+        padding: 10px;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .top-actions {
+        width: 100%;
+    }
+
+    .upload-btn,
+    .outline {
+        flex: 1;
+
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    .mode-tabs {
+        flex-direction: column;
+    }
+
+    .tab {
+        width: 100%;
+    }
+}

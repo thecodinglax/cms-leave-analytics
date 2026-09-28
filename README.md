@@ -51,3 +51,9 @@ python app.py
 ```text
 http://127.0.0.1:5000
 ```
+
+## Screenshots
+
+### Dashboard
+
+![Dashboard](CMS_Leave_Analytics/dashboard.png)

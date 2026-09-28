@@ -26,31 +26,28 @@ and generating useful reports and visualizations.
 
 ## How to Run
 
+## How to Run
+
 ### 1. Clone the repository
 
+```bash
 git clone https://github.com/thecodinglax/cms-leave-analytics.git
+```
 
 ### 2. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. Run the application
 
+```bash
 python app.py
+```
 
 ### 4. Open in browser
 
+```text
 http://127.0.0.1:5000
-
-## Project Structure
-
-CMS_Leave_Analytics/
-├── app.py
-├── requirements.txt
-├── .gitignore
-├── static/
-└── templates/
-
-## Author
-
-Laxmi Maurya
+```
